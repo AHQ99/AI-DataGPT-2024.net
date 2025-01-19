@@ -1,0 +1,456 @@
+﻿@{
+    ViewData["Title"] = "Landing Page";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>DataGPT</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <!-- Favicon -->
+    <link rel="icon" href="~/assets/img/Logo_no%20background_enhanced.png" type="image/png">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/Logo_no%20background_enhanced.png"> <!--used for tab's icon & Customized GPT -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Ninestars
+    * Updated: Jan 29 2024 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+
+                <a href="https://localhost:7124/Home/LandingPage"><img src="~/assets/img/Text logo .png" alt="DataGPT logo" class="img-fluid"></a>
+
+            </div>
+
+
+            <nav id="navbar" class="navbar">
+
+
+                <!--change the "getstarted scrollto" and make a new one that is specified to login (keep the syle and redirect it to the sign in page)-->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul>
+                        <li><a class="nav-link" href="https://localhost:7150/Home/HomePage">Home</a></li>
+                        <li><a class="nav-link" href="#">Clean Datasets </a></li>
+                        <li><a class="nav-link" href="https://localhost:7150/Home/DataPage">My Datasets</a></li>
+
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Account <i class="mdi mdi-chevron-down ms-1"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" asp-controller="Account" asp-action="UserProfile">Profile</a>
+                                <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+
+                            </div>
+                        </div>
+
+                        <li><a class="getstarted scrollto" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">About </a></li>
+                        <li><a class="nav-link scrollto" href="#services">Features</a></li>
+                        <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
+                        <li><a class="nav-link scrollto" href="#team">Team</a></li>
+
+                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                        <a class="getstarted scrollto" asp-controller="Account" asp-action="Login">Login/Signup</a>
+                    </ul>
+                }
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section style="margin-top:auto" id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1>Clean & Enhance Your Datasets with ChatGPT4.</h1>
+
+                    <div>
+                        <!--change to auth0 sign up page -->
+                        <a class="btn-get-started scrollto" asp-controller="Account" asp-action="Signup">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <img src="~/assets/img/undraw_instant_analysis_re_mid5.svg" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                        <img src="~/assets/img/undraw_visionary_technology_re_jfp7.svg" class="img-fluid" alt="" data-aos="zoom-in">
+                    </div>
+                    <div class="col-lg-6 pt-5 pt-lg-0">
+                        <h3 data-aos="fade-up">Take Your Data Cleansing Task to Another Level</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            Bring ChatGPT into your data preprocessing tasks and discover the great capabilities.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bx bx-receipt"></i>
+                                <h4>Do NOT miss changes history!</h4>
+                                <p>Reports will be generated to keep tracking changes on your datasets.</p>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>Construct Knowledge</h4>
+                                <p>With the help of ChatGPT you can construct a Knowledge base.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+        <!-- ======= Services Section ======= -->
+        <!--Replace to be features -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+
+                    <p>Clean Your Data <span class="gradient-text">Intelligently ✨</span> </p>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <!--Replace with real project assets-->
+                            <div class="icon"><i class="bx bx-eraser"></i></div>
+                            <h4 class="title">Data Cleansing🧹</a></h4>
+                            <p class="description">Clean your data intelligently with the power of ChatGPT.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title">Report Generation📄</a></h4>
+                            <p class="description">Reports will be generated to follow up on the changes in the dataset.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-cog"></i></div>
+                            <h4 class="title">Datasets Management📚</a></h4>
+                            <p class="description">Upload, View, and delete  your datasets.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-detail"></i></div>
+                            <h4 class="title">Extending New Features⚙️🆕</a></h4>
+                            <p class="description">Discover new Features that could be added into your dataset with the help of DataGPT</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+        <!-- ======= F.A.Q Section ======= -->
+
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>F.A.Q</h2>
+                    <p>Frequently Asked Questions</p>
+                </div>
+
+                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What is DataGPT and how can it help me clean my data?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                The DataGPT project is a graduation project done by 219 CS students as a partial requirement for bachelor’s degree graduation. DataGPT is a ChatGPT-based project that can analyze your datasets, identify errors like missing values or inconsistencies, and suggest corrections. It can also automate tasks like filling in missing data, removing duplicates, and standardizing formatting.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">What types of data can it handle?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                DataGPT can work with various data formats, including CSV, Excel spreadsheets,... . It can also handle different data types, such as numbers, text, and dates. However, it's important to note that the more complex your data structure, the more human oversight might be needed.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">How accurate are the ChatGPT-4 responses? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                ChatGPT-4 responses aim for high accuracy, but their accuracy can vary depending on the topic, the specificity of the question, and the information available up to its last training cut-off.
+                            </p>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </section><!-- End F.A.Q Section -->
+        <!-- ======= Team Section ======= -->
+
+
+        <section id="team" class="team">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Team</h2>
+                    <p>Our Team </p>
+
+
+                </div>
+                <div class="supervisor-info">
+                    <h4>Supervised by Dr.Abdulelah Algosaibi </h4> <br>
+                    <p>Artificial Intelligence Associate Professor</p>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member">
+                            <img src="~/assets/img/team/dev.png" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Abdulaziz <br> Sami Alshateeb</h4>
+                                    <span>CS Student</span>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="tooltip-container">
+                            <span class="tooltip">My social media</span>
+                            <span class="text">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     fill="none"
+                                     viewBox="0 0 95 114"
+                                     class="svgIcon">
+                                    <rect fill="black" rx="28.5" height="57" width="57" x="19"></rect>
+                                    <path fill="black"
+                                          d="M0 109.5C0 83.2665 21.2665 62 47.5 62V62C73.7335 62 95 83.2665 95 109.5V114H0V109.5Z"></path>
+                                </svg>
+                                <a href="https://linktr.ee/Aziz23_CS" target="_blank">Linktree</a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!--------------------------------------------------------------------------------------------------->
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member">
+                            <img src="~/assets/img/team/dev.png" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Ali <br>Abbas Almubarak</h4>
+                                    <span><p>CS Student</p></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="tooltip-container">
+                            <span class="tooltip">My social media</span>
+                            <span class="text">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     fill="none"
+                                     viewBox="0 0 95 114"
+                                     class="svgIcon">
+                                    <rect fill="black" rx="28.5" height="57" width="57" x="19"></rect>
+                                    <path fill="black"
+                                          d="M0 109.5C0 83.2665 21.2665 62 47.5 62V62C73.7335 62 95 83.2665 95 109.5V114H0V109.5Z"></path>
+                                </svg>
+                                <a href="https://linktr.ee/alooooy21" target="_blank">Linktree</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------------------------------------------------------->
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="member">
+                            <img src="~/assets/img/team/dev.png" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Ali <br>Hussain  Alqattan</h4>
+                                    <span>CS Student</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tooltip-container">
+                            <span class="tooltip">My social media</span>
+                            <span class="text">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     fill="none"
+                                     viewBox="0 0 95 114"
+                                     class="svgIcon">
+                                    <rect fill="black" rx="28.5" height="57" width="57" x="19"></rect>
+                                    <path fill="black"
+                                          d="M0 109.5C0 83.2665 21.2665 62 47.5 62V62C73.7335 62 95 83.2665 95 109.5V114H0V109.5Z"></path>
+                                </svg>
+                                <a href="https://linktr.ee/Ali4584" target="_blank">Linktree</a>
+                            </span></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="member">
+                            <img src="~/assets/img/team/dev.png" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Ali<br> Hassan Alghazal</h4>
+                                    <span>CS Student</span>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tooltip-container">
+                            <span class="tooltip">My social media</span>
+                            <span class="text">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     fill="none"
+                                     viewBox="0 0 95 114"
+                                     class="svgIcon">
+                                    <rect fill="black" rx="28.5" height="57" width="57" x="19"></rect>
+                                    <path fill="black"
+                                          d="M0 109.5C0 83.2665 21.2665 62 47.5 62V62C73.7335 62 95 83.2665 95 109.5V114H0V109.5Z"></path>
+                                </svg>
+                                <a href="https://linktr.ee/ali_alghazal" target="_blank">Linktree</a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+        </section><!-- End Team Section -->
+
+
+
+
+
+        
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <!--
+                     <div class="col-lg-3 col-md-6 footer-contact">
+                       <h3>DataGPT</h3>
+                       <p>
+                         King Faisal University <br>
+                         College of Computer Sciences & Information Technology<br>
+                         Computer Science Department <br>
+                         Kingdom OF Saudi Arabia <br><br>
+
+                         <strong>Email:</strong> <a href = "mailto:datagpt2024@gmail.com">datagpt2024@gmail.com</a><br>
+                       </p>
+                     </div>
+                     -->
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-4">
+
+
+
+            <div class="copyright">
+                Made with ❤️  By CCSIT Students<br>
+                <a href="mailto:datagpt2024@gmail.com">datagpt2024@gmail.com</a> <br>
+                <br> &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/aos/aos.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+</body>

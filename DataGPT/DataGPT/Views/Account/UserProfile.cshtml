@@ -1,0 +1,96 @@
+﻿﻿@{
+    ViewData["Title"] = "User Profile";
+}
+<head>
+    <link href="~/css/UserProfile/UserProfile.css" rel="stylesheet">
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+   
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+
+                <a href="https://localhost:7124/Home/HomePage"><img src="~/assets/img/Text logo .png" alt="DataGPT logo" class="img-fluid"></a>
+
+                <!-- title
+                <h1 class="text-light" style="margin-left: 5px;"><a href="index.html"><span>DataGPT</span></a></h1>  -->
+
+            </div>
+
+
+            <nav id="navbar" class="navbar">
+
+
+                <!--change the "getstarted scrollto" and make a new one that is specified to login (keep the syle and redirect it to the sign in page)-->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <ul>
+                        <li><a class="nav-link" href="https://localhost:7124/Home/HomePage" ">Home</a></li>
+                        <li><a class="nav-link" href="https://localhost:7124/Home/ChatGPTPage">Clean Datasets </a></li>
+                        <li><a class="nav-link" href="https://localhost:7124/Files">My Datasets</a></li>
+
+                        
+                       
+                        <li><a class="getstarted scrollto" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">About </a></li>
+                        <li><a class="nav-link scrollto" href="#services">Features</a></li>
+                        <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
+                        <li><a class="nav-link scrollto" href="#team">Team</a></li>
+
+                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                        <li><a class="getstarted scrollto" asp-controller="Account" asp-action="Login">Login/Signup</a></li>
+                    </ul>
+                }
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <p>---</p>
+<div class="page-content page-container" id="page-content">
+
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                        <img src="@Model.ProfileImage" class="img-radius" alt="User-Profile-Image">
+                                </div>
+                                
+
+                                   
+                                
+                                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">User name</h6>
+                           
+                                    <h6 class="f-w-600">@Model.Name</h6>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------->
+    
+</body>

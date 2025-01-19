@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Page</title>
+    <link rel="stylesheet" href="~/css/HomePage/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+</head>
+<body style="width: 100%;">
+    
+    <div class="container navbar">
+        <a href="https://localhost:7124/Home/HomePage"><img src="~/img/HomePage/Logo.png" alt="DataGPT logo" class="image logo"></a>
+        
+        <div class="avatar user-avatar">
+            <!-- Dropdown Trigger -->
+            <div class="icon"><img style="border-radius:60%;" width="60" height="60" src="@Model.ProfileImage" alt="user-male-circle" /></div>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu">
+                <a asp-controller="Account" asp-action="UserProfile">Profile</a>
+                <a asp-controller="Account" asp-action="Logout">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hero">
+        <div class="text hero-heading">Welcome @Model.Name
+        <a href="https://chatgpt.com/g/g-INWXuCB7f-datagpt"><h7>Try DataGPT</h7></a></div>
+        <img src="~/img/HomePage/Welcome.png" class="image hero-image">
+    </div>
+
+    <div class="container cards">
+        <a style="text-decoration: none; color:black;" href="https://localhost:7124/Files">
+            <div class="container card dataset-card">
+                <img src="~/img/HomePage/Mydatasets.png" class="imagecard">
+                <br>
+                <div class="textcard">My Dataset</div>
+            </div>
+        </a>
+        
+        <br>
+        <a href="https://localhost:7124/Home/ChatGPTPage#">
+            <div class="container card clean-dataset-card">
+                <img src="~/img/icons8-chatgpt-96.png" class="imagecard">
+                <div class="textcard">ChatGPT</div>
+            </div>
+        </a>
+        
+    </div>
+</body>

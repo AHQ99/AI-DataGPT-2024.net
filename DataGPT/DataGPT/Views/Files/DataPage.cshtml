@@ -1,0 +1,39 @@
+﻿@model IEnumerable<UserFile>
+
+@{
+    ViewData["Title"] = "File Management";
+}
+
+<h2>File Management</h2>
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">Upload file:</label>
+        <input type="file" id="file" name="file" />
+        <button type="submit">Upload</button>
+    </div>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="fileName" value="@file.FileName" />
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a asp-action="Download" asp-route-fileName="@file.FileName">Download</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
